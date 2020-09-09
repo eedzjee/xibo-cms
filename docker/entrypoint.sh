@@ -96,7 +96,7 @@ fi
 
 DB_EXISTS=0
 # Check if the database exists already
-if mysql -D $MYSQL_DATABASE -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST -P $MYSQL_PORT -e "SELECT settingId FROM \`setting\` LIMIT 1"
+if mysql -D $MYSQL_DATABASE -u $MYSQL_USER -p$MYSQL_PASSWORD -h $MYSQL_HOST -P $MYSQL_PORT -e "SELECT settingId FROM \`setting\` LIMIT 1" > /dev/null 2>&1
 then
   # Database exists.
   DB_EXISTS=1
